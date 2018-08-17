@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from django.core.management.base import BaseCommand
-from price.models import PriceOnix, \
+from price_onixcoin.models import PriceOnix, \
     PriceBtcLocalbitcoin, Yobit
 import os
 

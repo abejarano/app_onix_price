@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from django.core.management.base import BaseCommand
 from decimal import Decimal
-from price.models import Yobit
+from price_onixcoin.models import Yobit
 import os
 import requests
 
