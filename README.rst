@@ -1,7 +1,7 @@
 # Onix prices buy.
 
 Es una aplicación django python que calcular el precio de venta y compra de onix en bolivares y dolares. La aplicación esta dirigida
-para el país de venzuela, sin emnbargo puede ser adaptada para otros paises.
+para el país de venzuela, sin embargo puede ser adaptada para otros paises.
 
 Librerias.
 _________
@@ -16,7 +16,7 @@ ______________
 1. Agrega la aplicación al INSTALL_APPS de tú proyecto django::
     INSTALLED_APPS = [
         ...
-        'polls',
+        'price_onixcoin',
     ]
 
 2. Ejecutas `python manage.py makemigrations price_onixcoin`
@@ -27,7 +27,7 @@ ______________
 Instalar la aplicación
 ______________________
 
-pip install django-price-onixcoin
+pip install price-onixcoin
 
 Posteriormente podrá crear unos crontad que ejecuete los siguientes comandos dentro de tu proyecto django
 
