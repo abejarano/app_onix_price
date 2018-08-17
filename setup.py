@@ -8,7 +8,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-price_onixcoin-onixcoin',
+    name='django-price-onixcoin',
     version='1',
     packages=find_packages(),
     include_package_data=True,
