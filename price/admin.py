@@ -19,4 +19,8 @@ class AdminLocalBitcoin(admin.ModelAdmin):
                     'price_btc_bs_avg_12h', 'price_btc_bs_avg_24h',)
 
 
-admin.site.register(PriceOnix)
+@admin.register(
+    PriceOnix
+)
+class AdminLocalBitcoin(admin.ModelAdmin):
+    list_display = ('btc_onx_buy', 'onx_bs_buy', 'usd_onx_buy', 'btc_onx_sell', 'onx_bs_sell', 'usd_onx_sell')
