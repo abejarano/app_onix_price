@@ -5,4 +5,5 @@ Es una aplicación python que calcular el precio de venta de onix en bolivares y
 # Librerias.
 
 django==2.1
+
 python3.6

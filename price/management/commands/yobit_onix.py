@@ -18,17 +18,19 @@ class Command(BaseCommand):
         r = requests.get(url, headers=headers)
         resp = r.json()
 
-        btc_onx = resp['ticker']['sell']
-        print(btc_onx)
+        btc_onx_buy = resp['ticker']['sell']
+        btc_onx_sell = resp['ticker']['buy']
 
         url = 'https://yobit.net/api/2/btc_usd/ticker'
         r = requests.get(url, headers=headers)
         resp = r.json()
 
-        usd_btc = resp['ticker']['sell']
-        print(usd_btc)
+        usd_btc_buy = resp['ticker']['sell']
+        usd_btc_sell = resp['ticker']['buy']
 
         Yobit(
-            btc_onx=Decimal(btc_onx),
-            usd_btc=Decimal(usd_btc),
+            btc_onx_sell=Decimal(btc_onx_sell),
+            usd_btc_sell=Decimal(usd_btc_sell),
+            btc_onx_buy=Decimal(btc_onx_buy),
+            usd_btc_buy=Decimal(usd_btc_buy),
         ).save()

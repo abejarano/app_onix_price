@@ -5,82 +5,74 @@ from django.utils import timezone
 # Create your models here.
 
 
-class PorcentajesIntercambio(models.Model):
-    procentaje_ganacia_venta = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False
-    )
-
-    class Meta:
-        db_table = 'onx_porcentaje_ganancia'
-
-
-class PrecioBtcLocalbitcoin(models.Model):
-    precio_btc_usd_avg_1h = models.DecimalField(
+class PriceBtcLocalbitcoin(models.Model):
+    price_btc_usd_avg_1h = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
     )
-    precio_btc_usd_avg_6h = models.DecimalField(
+    price_btc_usd_avg_6h = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
     )
-    precio_btc_usd_avg_12h = models.DecimalField(
+    price_btc_usd_avg_12h = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
     )
-    precio_btc_usd_avg_24h = models.DecimalField(
+    price_btc_usd_avg_24h = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
     )
-    precio_btc_bs_avg_1h = models.DecimalField(
+    price_btc_bs_avg_1h = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
     )
-    precio_btc_bs_avg_6h = models.DecimalField(
+    price_btc_bs_avg_6h = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
     )
-    precio_btc_bs_avg_12h = models.DecimalField(
+    price_btc_bs_avg_12h = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
     )
-    precio_btc_bs_avg_24h = models.DecimalField(
+    price_btc_bs_avg_24h = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
     )
     created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        db_table = 'onx_precio_btc'
+        db_table = 'onx_price_btc'
 
 
-class PrecioOnix(models.Model):
-    btc_onx_venta = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False
+class PriceOnix(models.Model):
+    btc_onx_buy = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False
     )
-    onx_bs_venta = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False
+    onx_bs_buy = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False
     )
-    usd_onx_venta = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False
+    usd_onx_buy = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False
     )
-    btc_onx_compra = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False
+    btc_onx_sell = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False
     )
-    onx_bs_compra = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False
+    onx_bs_sell = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False
     )
-    usd_onx_compra = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False
-    )
-    procentaje_intercambio = models.ForeignKey(
-        PorcentajesIntercambio,
-        on_delete=models.PROTECT
+    usd_onx_sell = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False
     )
 
     created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        db_table = 'onx_historico_precio'
+        db_table = 'onx_historico_price'
 
 
 class Yobit(models.Model):
-    btc_onx = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False)
-    usd_btc = models.DecimalField(
-        max_digits=16, decimal_places=8, null=False, blank=False)
+    btc_onx_sell = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False)
+    usd_btc_sell = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False)
+    btc_onx_buy = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False)
+    usd_btc_buy = models.DecimalField(
+        max_digits=20, decimal_places=8, null=False, blank=False)
     created_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        db_table = 'onx_yobit'
+        db_table = 'yobit_onix'
+        ordering = ['-created_at']
