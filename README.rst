@@ -1,4 +1,5 @@
-# Onix prices buy.
+Onix prices.
+__________
 
 Es una aplicación django python que calcular el precio de venta y compra de onix en bolivares y dolares. La aplicación esta dirigida
 para el país de venzuela, sin embargo puede ser adaptada para otros paises.
