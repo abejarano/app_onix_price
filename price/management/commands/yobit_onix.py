@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from django.core.management.base import BaseCommand
-from apps.onx.models import Yobit
+from decimal import Decimal
+from price.models import Yobit
 import os
 import requests
 
@@ -18,14 +19,16 @@ class Command(BaseCommand):
         resp = r.json()
 
         btc_onx = resp['ticker']['sell']
+        print(btc_onx)
 
         url = 'https://yobit.net/api/2/btc_usd/ticker'
         r = requests.get(url, headers=headers)
         resp = r.json()
 
         usd_btc = resp['ticker']['sell']
+        print(usd_btc)
 
         Yobit(
-            btc_onx_buy=btc_onx,
-            usd_btc_buy=usd_btc,
+            btc_onx=Decimal(btc_onx),
+            usd_btc=Decimal(usd_btc),
         ).save()

@@ -6,7 +6,7 @@ from decimal import Decimal
 
 import os
 import requests
-from apps.onx.models import PrecioBtcLocalbitcoin
+from price.models import PrecioBtcLocalbitcoin
 
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.abspath(__file__))) + '/commands/'
