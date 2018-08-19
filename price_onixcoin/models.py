@@ -34,6 +34,7 @@ class PriceBtcLocalbitcoin(models.Model):
 
     class Meta:
         db_table = 'onx_price_btc'
+        ordering = ['-created_at']
 
 
 class PriceOnix(models.Model):
@@ -60,6 +61,7 @@ class PriceOnix(models.Model):
 
     class Meta:
         db_table = 'onx_historico_price'
+        ordering = ['-created_at']
 
 
 class Yobit(models.Model):
