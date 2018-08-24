@@ -18,8 +18,8 @@ class Command(BaseCommand):
         r = requests.get(url, headers=headers)
         resp = r.json()
 
-        btc_onx_buy = resp['ticker']['sell']
-        btc_onx_sell = resp['ticker']['buy']
+        btc_onx_buy = resp['ticker']['buy']
+        btc_onx_sell = resp['ticker']['sell']
 
         url = 'https://yobit.net/api/2/btc_usd/ticker'
         r = requests.get(url, headers=headers)
