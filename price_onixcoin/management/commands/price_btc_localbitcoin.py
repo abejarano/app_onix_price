@@ -26,17 +26,17 @@ class Command(BaseCommand):
         try:
 
             PriceBtcLocalbitcoin(
-                price_btc_usd_avg_1h=Decimal(precio_btc_usd_local['avg_1h']),
+                price_btc_usd_avg_1h=Decimal(precio_btc_usd_local['rates']['last']),
                 price_btc_usd_avg_6h=Decimal(precio_btc_usd_local['avg_6h']),
                 price_btc_usd_avg_12h=Decimal(
                     precio_btc_usd_local['avg_12h']),
                 price_btc_usd_avg_24h=Decimal(
                     precio_btc_usd_local['avg_24h']),
 
-                price_btc_bs_avg_1h=Decimal(precio_btc_bs_local['avg_1h']),
+                price_btc_bs_avg_1h=Decimal(precio_btc_bs_local['rates']['last']),
                 price_btc_bs_avg_6h=Decimal(precio_btc_bs_local['avg_6h']),
                 price_btc_bs_avg_12h=Decimal(precio_btc_bs_local['avg_12h']),
                 price_btc_bs_avg_24h=Decimal(precio_btc_bs_local['avg_24h']),
             ).save()
         except decimal.InvalidOperation as e:
-            print(Decimal(precio_btc_usd_local['avg_1h']))
+            pass
