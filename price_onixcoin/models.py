@@ -32,16 +32,20 @@ class PriceBtcLocalbitcoin(models.Model):
         max_digits=20, decimal_places=8, null=False, blank=False
     )
     price_btc_bs_avg_1h = models.DecimalField(
-        max_digits=20, decimal_places=8, null=False, blank=False
+        max_digits=20, decimal_places=8, null=False, blank=False,
+        verbose_name=_('BTC EN MONEDA LOCAL AVG 1H')
     )
     price_btc_bs_avg_6h = models.DecimalField(
-        max_digits=20, decimal_places=8, null=False, blank=False
+        max_digits=20, decimal_places=8, null=False, blank=False,
+        verbose_name=_('BTC EN MONEDA LOCAL AVG 6H')
     )
     price_btc_bs_avg_12h = models.DecimalField(
-        max_digits=20, decimal_places=8, null=False, blank=False
+        max_digits=20, decimal_places=8, null=False, blank=False,
+        verbose_name = _('BTC EN MONEDA LOCAL AVG 12H')
     )
     price_btc_bs_avg_24h = models.DecimalField(
-        max_digits=20, decimal_places=8, null=False, blank=False
+        max_digits=20, decimal_places=8, null=False, blank=False,
+        verbose_name=_('BTC EN MONEDA LOCAL AVG 24H')
     )
     country = models.ForeignKey(Country, default='VEN', on_delete=models.PROTECT)
     created_at = models.DateTimeField(default=timezone.now)
@@ -57,7 +61,8 @@ class PriceOnix(models.Model):
         max_digits=20, decimal_places=8, null=False, blank=False
     )
     onx_bs_buy = models.DecimalField(
-        max_digits=20, decimal_places=8, null=False, blank=False
+        max_digits=20, decimal_places=8, null=False, blank=False,
+        verbose_name=_('ONX EN MONEDA LOCAL PARA LA COMPRA')
     )
     usd_onx_buy = models.DecimalField(
         max_digits=20, decimal_places=8, null=False, blank=False
@@ -66,10 +71,11 @@ class PriceOnix(models.Model):
         max_digits=20, decimal_places=8, null=False, blank=False
     )
     onx_bs_sell = models.DecimalField(
-        max_digits=20, decimal_places=8, null=False, blank=False
+        max_digits=20, decimal_places=8, null=False, blank=False,
+        verbose_name=_('ONX EN MONEDA LOCAL PARA LA VENTA')
     )
     usd_onx_sell = models.DecimalField(
-        max_digits=20, decimal_places=8, null=False, blank=False
+        max_digits=20, decimal_places=8, null=False, blank=False,
     )
     country = models.ForeignKey(Country, default='VEN', on_delete=models.PROTECT)
     created_at = models.DateTimeField(default=timezone.now)

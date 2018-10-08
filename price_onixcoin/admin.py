@@ -22,8 +22,9 @@ class AdminLocalBitcoin(admin.ModelAdmin):
 @admin.register(
     PriceOnix
 )
-class AdminLocalBitcoin(admin.ModelAdmin):
+class AdminLocalPriceOnix(admin.ModelAdmin):
     list_display = ('btc_onx_buy', 'onx_bs_buy', 'usd_onx_buy', 'btc_onx_sell', 'onx_bs_sell', 'usd_onx_sell')
+    list_filter = ('country',)
 
 @admin.register(
     Country
